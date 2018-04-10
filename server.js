@@ -2,10 +2,11 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+
 // Creates an Express application.
 var app = express();
 
-// registering partials that are in the view/partials folder
+// registering partials that are in the views/partials directory
 hbs.registerPartials(__dirname + '/views/partials');
 
 // setting view engine property in app to hbs
@@ -28,9 +29,9 @@ app.use((req, res, next) => {
 
 // middleware that renders maintenance messsage without next() invocation
 // this will not execute any of the code for routes or helpers.
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+  // res.render('maintenance.hbs');
+// });
 
 // using express.static built-in middleware function to render static resources
 // __dirname = /home/yagna/Desktop/node-web-server (project root)
